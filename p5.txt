@@ -70,15 +70,17 @@ Se ha capturado una sesión SIP (archivo sip.cap.gz), que se puede abrir con Wir
  ** Además de REGISTER, ¿qué instrucciones SIP entiende el UA?
         Entiende INVITE,ACK,OPTIONS,BYE,CANCEL,NOTIFY,REFER,MESSAGE además de REGISTER.
 
-
 [Al terminar el ejercicio es recomendable hacer commit de los ficheros modificados]
 
 9. Fijémonos en las tramas siguientes a la número 46:
  ** ¿Se registra con éxito en el primer intento?
+        No, serán necesarios dos REGISTER. El primero será fallido y el servidor responderá con una clave que el cliente deberá transformar y enviar al servidor según unos parametros acordados. Si coincide con los calculos del servidor le registrará la segunda vez.
  ** ¿Cómo sabemos si el registro se ha realizado correctamente o no?
+        El cliente ha preguntado por DNS si el servidor le tiene guardado, pero no es así.
  ** ¿Podrías identificar las diferencias entre el primer intento y el segundo de registro? (fíjate en el tamaño de los paquetes y mira a qué se debe el cambio)
+        El segundo contiene la clave, el campo AUTHORIZATION para registrarse correctamente.
  ** ¿Cuánto es el valor del tiempo de expiración de la sesión? Indica las unidades.
-
+        La sesión expirará en 3600 SEGUNDOS.
 
 10. Una vez registrados, podemos efectuar una llamada. Vamos a probar con el servicio de eco de Ekiga que nos permite comprobar si nos hemos conectado correctamente. El servicio de eco tiene la dirección sip:500@ekiga.net. Veamos el INVITE de cerca.
  ** ¿Puede verse el nombre del que efectúa la llamada, así como su dirección SIP?
