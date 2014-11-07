@@ -139,15 +139,19 @@ Se ha capturado una sesión SIP (archivo sip.cap.gz), que se puede abrir con Wir
 
 15. Identifica la trama donde se finaliza la conversación.
  ** ¿Qué método SIP se utiliza?
+        BYE
  ** ¿En qué trama(s)?
+        En el segundo 38.119195 el cliente envia el primer BYE
  ** ¿Por qué crees que se envía varias veces?
-
+        
 
 16. Finalmente, se cierra la aplicación de VozIP.
  ** ¿Por qué aparece una instrucción SIP del tipo REGISTER?
+        El cliente debe enviar un REGISTER con la clave del servidor y el campo EXPIRES a 0
  ** ¿En qué trama sucede esto?
+        El primer REGISTER para irse en 950 y el segundo con la clave correcta en el 952
  ** ¿En qué se diferencia con la instrucción que se utilizó con anterioridad (al principio de la sesión)?
-
+        Este REGISTER posee el campo a 0 para notificar al servidor que se quiere dar de baja de la sesión.
 
 
 [Al terminar el ejercicio es recomendable hacer commit de los ficheros modificados]
