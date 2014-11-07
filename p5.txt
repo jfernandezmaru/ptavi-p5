@@ -119,12 +119,17 @@ Se ha capturado una sesión SIP (archivo sip.cap.gz), que se puede abrir con Wir
 
 13. Elige un paquete RTP de audio. Analiza el flujo de audio en Telephony -> RTP -> Stream Analysis.
  ** ¿Cuánto valen el delta y el jitter para el primer paquete que ha llegado?
+        Delta vale 0 ms y el jitter lo mismo
  ** ¿Podemos saber si éste es el primer paquete que nos han enviado?
+        Claro es el único con esos valores
  ** Los valores de jitter son menores de 10ms hasta un paquete dado. ¿Cuál?
+        Hasta el número 247 donde vale 38.82 ms
  ** ¿A qué se debe el cambio tan brusco del jitter?
+        La delta pasa a valer 554.74 ms por lo tanto hay un retraso en la transmisión.
  ** ¿Es comparable este cambio con el tiempo desde la recepción del paquete anterior? ¿Por qué?
+        Si porque Delta y jitter están relacionados.
  ** ¿Cuál es la dependencia entre el tiempo transcurrido desde el paquete anterior y el valor de jitter?
-
+        El jitter mide la varianza de todos los tiempos de llegada y el delta la diferencia entre dos consecutivos.
 
 14. En Telephony selecciona el menú VoIP calls. Verás que se lista la llamada de voz IP capturada en una ventana emergente. Selecciona esa llamada y pulsa el botón Graph.
  ** ¿Cuánto dura la conversación?
