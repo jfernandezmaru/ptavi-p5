@@ -98,11 +98,12 @@ Se ha capturado una sesión SIP (archivo sip.cap.gz), que se puede abrir con Wir
  ** ¿Cuál es el tamaño de paquete de los mismos?
         SIP ocupa 615, 883 y 799 bytes en los 3 paquetes. DNS 82, 157, 90 y 147 bytes. H.216 ocupa aproximadamente 1070 bytes salvo algunos que ocupan menos (200-400) bytes. RTP ocupa 214 bytes en todos de los casos.
  ** ¿Se utilizan bits de padding?
-        
+        No, aparece FALSE.
  ** ¿Cuál es la periodicidad de los paquetes que se envían?
+        Cada 0.02 segundos aproximadamente
  ** ¿Cuántos bits/segundo estamos enviando?
-
-
+        Aproximadamente 135.68 Kbps
+ 
 
 [Al terminar el ejercicio es recomendable hacer commit de los ficheros modificados]
 
