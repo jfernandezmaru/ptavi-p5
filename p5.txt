@@ -84,15 +84,21 @@ Se ha capturado una sesión SIP (archivo sip.cap.gz), que se puede abrir con Wir
 
 10. Una vez registrados, podemos efectuar una llamada. Vamos a probar con el servicio de eco de Ekiga que nos permite comprobar si nos hemos conectado correctamente. El servicio de eco tiene la dirección sip:500@ekiga.net. Veamos el INVITE de cerca.
  ** ¿Puede verse el nombre del que efectúa la llamada, así como su dirección SIP?
+        Correcto, puede verse de tal modo que el sujeto es Gregorio Robles y su dirección sip es grex@ekiga.net
  ** ¿Qué es lo que contiene el cuerpo de la trama? ¿En qué formato/protocolo está?
+        Tenemos el mensaje en SDP con informacion sobre el creador de la sesión, sobre la conexion, sobre el tiempo, sobre el contenido (audio y video)...etc
  ** ¿Tiene éxito el primer intento? ¿Cómo lo sabes?
+        No. En el primer intento falta el campo Proxy-Authorization. El servidor le envia la clave y el cliente construye el campo con la clave.
  ** ¿En qué se diferencia el segundo INVITE más abajo del primero? ¿A qué crees que se debe esto?
-
+        El segundo mensaje INVITE tiene el campo Proxy-Authorization construido con la clave que el servidor le da al cliente.
 
 11. Una vez conectado, estudia el intercambio de tramas.
  ** ¿Qué protocolo(s) se utiliza(n)? ¿Para qué sirven estos protocolos?
+        Se utiliza SIP para establecer la conexion con el servidor de DNS y una vez que dicho servidor le facilita la direccion del otro locutor establecen sesion entre ambos con SIP de nuevo. El intercambio de mensajes se produce con H.261 y RTP.
  ** ¿Cuál es el tamaño de paquete de los mismos?
+        SIP ocupa 615, 883 y 799 bytes en los 3 paquetes. DNS 82, 157, 90 y 147 bytes. H.216 ocupa aproximadamente 1070 bytes salvo algunos que ocupan menos (200-400) bytes. RTP ocupa 214 bytes en todos de los casos.
  ** ¿Se utilizan bits de padding?
+        
  ** ¿Cuál es la periodicidad de los paquetes que se envían?
  ** ¿Cuántos bits/segundo estamos enviando?
 
