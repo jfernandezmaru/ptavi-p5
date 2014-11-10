@@ -109,7 +109,7 @@ Se ha capturado una sesión SIP (archivo sip.cap.gz), que se puede abrir con Wir
 
 12. Vamos a ver más a fondo el intercambio RTP. En Telephony hay una opción RTP. Empecemos mirando los flujos RTP.
  ** ¿Cuántos flujos hay? ¿por qué?
-        Hay un total de 611
+        Hay un total de 2 para el audio y para el video solo de ida
  ** ¿Cuántos paquetes se pierden?
         No se pierde ninguno
  ** ¿Cuál es el valor máximo del delta? ¿Y qué es lo que significa el valor de delta?
