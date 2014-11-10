@@ -135,7 +135,7 @@ Se ha capturado una sesión SIP (archivo sip.cap.gz), que se puede abrir con Wir
  ** ¿Cuánto dura la conversación?
         Dura 21 segundos
  ** ¿Cuáles son sus SSRC? ¿Por qué hay varios SSRCs? ¿Hay CSRCs?
-        
+        Tenemos dos uno para el audio y otro para el video (0xBF4AFD37, 0x43306582 respectvamente). No hay CSRCs
 
 15. Identifica la trama donde se finaliza la conversación.
  ** ¿Qué método SIP se utiliza?
@@ -143,7 +143,7 @@ Se ha capturado una sesión SIP (archivo sip.cap.gz), que se puede abrir con Wir
  ** ¿En qué trama(s)?
         En el segundo 38.119195 el cliente envia el primer BYE
  ** ¿Por qué crees que se envía varias veces?
-        
+        Envia 4 BYE porque usamos el protocolo SIP y al finalizar la sesion envia varias veces la trama por si se pierde sin esperar al primer asentimiento
 
 16. Finalmente, se cierra la aplicación de VozIP.
  ** ¿Por qué aparece una instrucción SIP del tipo REGISTER?
